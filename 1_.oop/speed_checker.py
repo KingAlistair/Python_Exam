@@ -3,7 +3,7 @@ from private_car import PrivateCar
 class SpeedChecker:
     def check_speed(self, car):
         try:
-            return car.speed  
+            return car.get_speed()
         except AttributeError:
             return "The car object does not have a speed attribute"
 
