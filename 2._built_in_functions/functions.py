@@ -1,13 +1,13 @@
 ### print() input()
 
-name = "John"
-age = 25
-print(name)
-print(age)
-print(f"{name} is {age} years old.")
+john_name = "John"
+john_age = 25
+print(john_name)
+print(john_age)
+print(f"{john_name} is {john_age} years old.")
 
-name = input("Who are you? ")
-print(f"Hello, {name}!")
+me = input("Who are you? ")
+print(f"Hello, {me}!")
 
 ### sum()
 
@@ -45,7 +45,7 @@ print(type(num))
 print(type(text))
 
 print(type(str(num)))
-print(type(int(num)))
+print(type(int(text)))
 
 ### zip
 
@@ -72,28 +72,37 @@ reverse_list.sort()
 
 reverse_list.reverse()
 
+### filter()
 
-### Student grades
+def is_even(n):
+    return n % 2 == 0
 
-def student_grades(students_dict):
-    top_student = max(students_dict, key=students_dict.get)
-    top_grade = students_dict[top_student]
+numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = filter(is_even, numbers2)
+even_numbers = list(even_numbers)
 
-    low_student = min(students_dict, key=students_dict.get)
-    low_grade = students_dict[low_student]
 
-    class_avg = sum(students_dict.values()) / len(students_dict)
+### Dog daycare
 
-    print(f"The student with the highest grade is {top_student} with a grade of {top_grade}.")
-    print(f"The student with the lowest grade is {low_student} with a grade of {low_grade}.")
-    print(f"The average grade of the class is {round(class_avg, 2)}.")
+def dog_ages(dogs_dict):
+    oldest_dog = max(dogs_dict, key=dogs_dict.get)
+    oldest_dog_age = dogs_dict[oldest_dog]
 
-students_dict = {
-    'John': 85,
-    'Lisa': 79,
-    'Tom': 86,
-    'Anna': 90,
-    'Mike': 75,
+    youngest_dog = min(dogs_dict, key=dogs_dict.get)
+    youngest_dog_age = dogs_dict[youngest_dog]
+
+    average_age = sum(dogs_dict.values()) / len(dogs_dict)
+
+    print(f"The oldest dog is {oldest_dog} with an age of {oldest_dog_age}.")
+    print(f"The youngest dog is {youngest_dog} with an age of {youngest_dog_age}.")
+    print(f"The average age of the dogs is {round(average_age, 2)}.")
+
+dogs_dict = {
+    'Rex': 7,
+    'Buddy': 5,
+    'Bella': 8,
+    'Lucy': 6,
+    'Max': 4,
 }
 
-student_grades(students_dict)
+dog_ages(dogs_dict)
