@@ -1,42 +1,80 @@
-print("print()")
-print("---------------------------------------------------------")
-text = "Print me!"
-print(text)
-
-print()
+### print() input()
 
 name = "John"
 age = 25
+print(name)
+print(age)
 print(f"{name} is {age} years old.")
 
-print()
-print("len()")
-print("---------------------------------------------------------")
+name = input("Who are you? ")
+print(f"Hello, {name}!")
+
+### sum()
+
+numbers = [1,2,3,4,5]
+
+custom_sum = 0
+for number in numbers:
+        custom_sum += number
+
+print(custom_sum)
+
+print(sum(numbers))
+
+### len()
+
 my_list = [1, 2, 3, 4, 5]
+my_string = "What is my length?"
 print("Length of my list:", len(my_list))
+print(my_string, len(my_string))
 
-print()
-print("range()")
-print("---------------------------------------------------------")
-for i in range(5):
-    print(i)
+### range()
 
-print()
-for j in range(10, 50, 10):
+for j in range(0, 11, 2):
     print(j)
 
-print()
-print("type()")
-print("---------------------------------------------------------")
-num = 123
-print(type(num))
+new_list = list(range(1,6))
+print(new_list)
 
-text = "Hello, world!"
+### type() str() int()
+
+num = 123
+text = "123"
+
+print(type(num))
 print(type(text))
 
-print()
-print("student_grades()")
-print("---------------------------------------------------------")
+print(type(str(num)))
+print(type(int(num)))
+
+### zip
+
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+dict = zip(names,ages)
+
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old")
+
+
+### sort() sorted()
+
+tuple = (3,5,2,1,4)
+
+# tuple.sort()
+
+new_list = sorted(tuple)
+
+reverse_list = sorted(new_list, reverse=True)
+
+reverse_list.sort()
+
+reverse_list.reverse()
+
+
+### Student grades
+
 def student_grades(students_dict):
     top_student = max(students_dict, key=students_dict.get)
     top_grade = students_dict[top_student]
