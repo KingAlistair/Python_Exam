@@ -1,17 +1,13 @@
-### input and output
+### print() input()
 
-### print()
+john_name = "John"
+john_age = 25
+print(john_name)
+print(john_age)
+print(f"{john_name} is {john_age} years old.")
 
-name = "John"
-age = 25
-print(name)
-print(age)
-print(f"{name} is {age} years old.")
-
-name = input("Who are you? ")
-print(f"Hello, {name}!")
-
-
+me = input("Who are you? ")
+print(f"Hello, {me}!")
 
 ### sum()
 
@@ -25,7 +21,6 @@ print(custom_sum)
 
 print(sum(numbers))
 
-
 ### len()
 
 my_list = [1, 2, 3, 4, 5]
@@ -33,29 +28,23 @@ my_string = "What is my length?"
 print("Length of my list:", len(my_list))
 print(my_string, len(my_string))
 
-
 ### range()
 
 for j in range(0, 11, 2):
     print(j)
 
-### list() range()
-
 new_list = list(range(1,6))
 print(new_list)
 
-
 ### type() str() int()
 
-number = 123
+num = 123
 text = "123"
 
-print(type(number))
-
+print(type(num))
 print(type(text))
 
-print(type(str(number)))
-
+print(type(str(num)))
 print(type(int(text)))
 
 ### zip
@@ -63,51 +52,57 @@ print(type(int(text)))
 names = ["Alice", "Bob", "Charlie"]
 ages = [25, 30, 35]
 
-dict = dict(zip(names,ages))
+dict = zip(names,ages)
 
 for name, age in zip(names, ages):
     print(f"{name} is {age} years old")
 
+
 ### sort() sorted()
 
-tuple = (3,1,5,2,4)
+tuple = (3,5,2,1,4)
 
-tuple.sort() # Error
+# tuple.sort()
 
-sorted_list = sorted(tuple) 
-print(sorted_list) 
+new_list = sorted(tuple)
 
-reverse_list = sorted(sorted_list, reverse=True)
-print(reverse_list) 
+reverse_list = sorted(new_list, reverse=True)
 
-sorted_list.reverse()
-print(sorted_list)
+reverse_list.sort()
 
-sorted_list.sort()
-print(sorted_list)
+reverse_list.reverse()
+
+### filter()
+
+def is_even(n):
+    return n % 2 == 0
+
+numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = filter(is_even, numbers2)
+even_numbers = list(even_numbers)
 
 
-### student_grades
+### Dog daycare
 
-def student_grades(students_dict):
-    top_student = max(students_dict, key=students_dict.get)
-    top_grade = students_dict[top_student]
+def dog_ages(dogs_dict):
+    oldest_dog = max(dogs_dict, key=dogs_dict.get)
+    oldest_dog_age = dogs_dict[oldest_dog]
 
-    low_student = min(students_dict, key=students_dict.get)
-    low_grade = students_dict[low_student]
+    youngest_dog = min(dogs_dict, key=dogs_dict.get)
+    youngest_dog_age = dogs_dict[youngest_dog]
 
-    class_avg = sum(students_dict.values()) / len(students_dict)
+    average_age = sum(dogs_dict.values()) / len(dogs_dict)
 
-    print(f"The student with the highest grade is {top_student} with a grade of {top_grade}.")
-    print(f"The student with the lowest grade is {low_student} with a grade of {low_grade}.")
-    print(f"The average grade of the class is {round(class_avg, 2)}.")
+    print(f"The oldest dog is {oldest_dog} with an age of {oldest_dog_age}.")
+    print(f"The youngest dog is {youngest_dog} with an age of {youngest_dog_age}.")
+    print(f"The average age of the dogs is {round(average_age, 2)}.")
 
-students_dict = {
-    'John': 85,
-    'Lisa': 79,
-    'Tom': 86,
-    'Anna': 90,
-    'Mike': 75,
+dogs_dict = {
+    'Rex': 7,
+    'Buddy': 5,
+    'Bella': 8,
+    'Lucy': 6,
+    'Max': 4,
 }
 
-student_grades(students_dict)
+dog_ages(dogs_dict)

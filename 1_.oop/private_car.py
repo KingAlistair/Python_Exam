@@ -9,7 +9,7 @@ class PrivateCar:
     def set_speed(self, speed):
         self.__speed = speed
 
-    def __drive(self):
+    def drive(self):
         print(f"The {self.color} car is driving at {self.__speed}mph.")
 
     def stop(self):
