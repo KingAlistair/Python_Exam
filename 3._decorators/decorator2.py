@@ -5,12 +5,12 @@ def timer_decorator(func):
         start_time = time.perf_counter()
         result = func(*args, **kwargs)
         end_time = time.perf_counter()
-        print(f"The function took {end_time - start_time} seconds to complete")
+        print(f"The function took {end_time - start_time} seconds to finish")
         return result
     return wrapper
 
 @timer_decorator
-def calculate_square(n):
-    return n ** 2 
+def calculate(n):
+    return n ** 10 
     
-print(calculate_square(10))
+print("Result: ", calculate(10))
