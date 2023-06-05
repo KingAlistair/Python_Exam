@@ -52,10 +52,9 @@ print(type(int(text)))
 names = ["Alice", "Bob", "Charlie"]
 ages = [25, 30, 35]
 
-dict = zip(names,ages)
+zip_result = zip(names,ages)
 
-for name, age in zip(names, ages):
-    print(f"{name} is {age} years old")
+new_dict = dict(zip_result)
 
 
 ### sort() sorted()
@@ -80,7 +79,7 @@ def is_even(n):
 numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 even_numbers = filter(is_even, numbers2)
 even_numbers = list(even_numbers)
-
+print(even_numbers)
 
 ### Dog daycare
 
